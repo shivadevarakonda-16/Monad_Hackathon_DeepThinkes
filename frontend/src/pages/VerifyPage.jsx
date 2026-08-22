@@ -239,6 +239,22 @@ export default function VerifyPage() {
                     {verificationResult.verdict === 'NOT_FOUND' && 'Certificate ID Not Found in Blockchain Registry'}
                   </h4>
                   <div className="small mb-0 opacity-90">{verificationResult.verdictMessage || verificationResult.message}</div>
+
+                  {verificationResult.verdict === 'VERIFIED_AUTHENTIC' && verificationResult.blockchainAnchoring?.chainTxHash && (
+                    <div className="mt-2 d-flex align-items-center gap-2 flex-wrap">
+                      <span className="badge bg-dark d-inline-flex align-items-center gap-1 px-2 py-2">
+                        <i className="bi bi-shield-check"></i> Verified by Monad Blockchain
+                      </span>
+                      <a
+                        href={`https://testnet.monadexplorer.com/tx/${verificationResult.blockchainAnchoring.chainTxHash}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="small fw-semibold text-decoration-underline"
+                      >
+                        View Transaction on Explorer <i className="bi bi-box-arrow-up-right ms-1"></i>
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="mt-3 mt-md-0">
@@ -399,10 +415,17 @@ export default function VerifyPage() {
 
                     {verificationResult.blockchainAnchoring?.chainTxHash && (
                       <div>
-                        <span className="small text-muted">Public Testnet Tx Hash (Monad Testnet):</span>
-                        <div className="font-monospace small bg-light p-2 rounded text-break border text-primary">
+                        <span className="small text-muted">Monad Testnet Transaction ID:</span>
+                        <a
+                          href={`https://testnet.monadexplorer.com/tx/${verificationResult.blockchainAnchoring.chainTxHash}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="d-block font-monospace small bg-light p-2 rounded text-break border text-primary text-decoration-none"
+                          title="Click to view on Monad Explorer"
+                        >
                           {verificationResult.blockchainAnchoring.chainTxHash}
-                        </div>
+                          <i className="bi bi-box-arrow-up-right ms-2"></i>
+                        </a>
                       </div>
                     )}
                   </div>
