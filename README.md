@@ -77,10 +77,7 @@ This provides a tamper-resistant and transparent verification mechanism.
 ### Blockchain
 
 - Solidity
-- Ethereum-compatible Smart Contracts
-- Hardhat
-- Ethers.js
-- Polygon Amoy Testnet
+-Monad Test Network.
 
 ### Cloud & Infrastructure
 
