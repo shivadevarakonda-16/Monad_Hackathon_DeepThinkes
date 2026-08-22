@@ -1,4 +1,4 @@
-# HACKVERSE 2026
+# MONAD-BLITZ-HACKATHON
 
 ## Team DeepThinkers
 
@@ -157,7 +157,7 @@ npm run build
 # Demo
 Live Demo
 
-URL : https://hv-2026-0001-deep-thinkers.vercel.app/
+URL : https://monad-hackathon-deep-thinkes.vercel.app
 
 Demo Video
 
@@ -187,14 +187,6 @@ The smart contract (`CertificateRegistry.sol`) is deployed on the Monad Testnet.
 RPC
 
 Monad's public testnet RPC (`https://testnet-rpc.monad.xyz/`) is used to connect the backend/blockchain deployment environment to the chain. Transactions can be independently verified on the Monad Explorer (`https://testnet.monadexplorer.com/`).
-
-
-# Screenshots
-
-Home Page
-![Alt text](/home/shiva/Pictures/Screenshots/)
-
-![Alt text](/home/shiva/Downloads/CERT-2026-0U3-9554.pdf)
 
 
 Project Stucture: 
@@ -238,8 +230,7 @@ credora/
 
 # Installation
 1. Clone the repository
-git clone https://github.com/shivadevarakonda-16/HV-2026-0001-DeepThinkers.git
-cd HV-2026-0001-DeepThinkers
+https://github.com/shivadevarakonda-16/Monad_Hackathon_DeepThinkes
 
 2. Install root dependencies
 npm install
@@ -250,13 +241,13 @@ npm install --prefix backend
 4. Install frontend dependencies
 npm install --prefix frontend
 
-5. Configure environment variables in `backend/.env` (see `backend/.env.example`), including:
+5. Configure environment variables in `backend/.env` , including:
 USE_REAL_CHAIN=true
 RPC_URL=https://testnet-rpc.monad.xyz/
-CONTRACT_ADDRESS=<deployed CertificateRegistry address>
-PRIVATE_KEY=<deployer wallet private key>
+CONTRACT_ADDRESS=0x9B98011e6Aec7Aa968D89a49D6D5bC1350883e71
+PRIVATE_KEY=*********************
 
-6. Deploy the smart contract to Monad Testnet (if not already deployed)
+6. Deploy the smart contract to Monad Testnet
 npx hardhat run scripts/deploy.js --network monad
 
 
