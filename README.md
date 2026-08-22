@@ -6,7 +6,7 @@
 
 1. ch. kumar chandu – Full Stack & Blockchain Developer
 2. D. Shiva Kumar – integration & backend
-3. Sathish Mallopolla - PPT Maker & Communicator.
+3. M. Sathish - graphic designer
 
 
 ---
@@ -38,18 +38,18 @@ There is a need for a secure, transparent, and reliable system that allows acade
 
 **Credora** provides a blockchain-based platform for issuing and verifying academic certificates and digital credentials.
 
-The system stores certificate information securely and generates a unique cryptographic hash for each certificate. The hash is recorded on the blockchain through a smart contract.
+The system stores certificate information securely and generates a unique cryptographic hash for each certificate. The hash is recorded on the blockchain through a smart contract deployed on the **Monad Testnet**.
 
 When a certificate needs to be verified:
 
 1. The certificate is uploaded to the system.
 2. Its cryptographic hash is calculated.
-3. The system retrieves the corresponding blockchain record.
+3. The system retrieves the corresponding blockchain record from Monad.
 4. The generated hash is compared with the stored hash.
-5. If both hashes match, the certificate is considered authentic.
+5. If both hashes match, the certificate is considered authentic, and a public Monad transaction ID is displayed as independent proof.
 6. If the hashes do not match, the certificate may have been modified or is not registered.
 
-This provides a tamper-resistant and transparent verification mechanism.
+This provides a tamper-resistant and transparent verification mechanism, independently auditable on a public blockchain explorer.
 
 ---
 
@@ -76,11 +76,14 @@ This provides a tamper-resistant and transparent verification mechanism.
 ### Blockchain
 
 - Solidity
-- Monad Test Network.
+- Ethereum-compatible Smart Contracts
+- Hardhat
+- Ethers.js
+- **Monad Testnet** (Chain ID 10143)
 
 ### Cloud & Infrastructure
 
-- Alchemy RPC
+- Monad Public RPC
 - Cloudinary
 - Git
 - GitHub
@@ -125,8 +128,8 @@ This provides a tamper-resistant and transparent verification mechanism.
                                                │
                                                ▼
                                     ┌────────────────────┐
-                                    │  Polygon Amoy      │
-                                    │    Test Network    │
+                                    │   Monad Testnet    │
+                                    │  (Chain ID 10143)  │
                                     └────────────────────┘
 
 ```
@@ -177,13 +180,13 @@ Database : MongoDB Atlas and Cloudinary (for storing the pdf/images)
 
 MongoDB Atlas is used as the cloud database.
 
-Blockchain  : Alchemy/Polygom Amoy.
+Blockchain  : Monad Testnet.
 
-The smart contract is deployed on the Polygon Amoy testnet.
+The smart contract (`CertificateRegistry.sol`) is deployed on the Monad Testnet.
 
 RPC
 
-Alchemy is used to connect the backend/blockchain deployment environment to Polygon Amoy.
+Monad's public testnet RPC (`https://testnet-rpc.monad.xyz/`) is used to connect the backend/blockchain deployment environment to the chain. Transactions can be independently verified on the Monad Explorer (`https://testnet.monadexplorer.com/`).
 
 
 # Screenshots
@@ -247,7 +250,14 @@ npm install --prefix backend
 4. Install frontend dependencies
 npm install --prefix frontend
 
+5. Configure environment variables in `backend/.env` (see `backend/.env.example`), including:
+USE_REAL_CHAIN=true
+RPC_URL=https://testnet-rpc.monad.xyz/
+CONTRACT_ADDRESS=<deployed CertificateRegistry address>
+PRIVATE_KEY=<deployer wallet private key>
 
+6. Deploy the smart contract to Monad Testnet (if not already deployed)
+npx hardhat run scripts/deploy.js --network monad
 
 
 # Future Enhancements
@@ -283,4 +293,3 @@ Test
 Final Code
        ↓
 Submit GitHub URL
-# Monad_Hackathon_DeepThinkes
