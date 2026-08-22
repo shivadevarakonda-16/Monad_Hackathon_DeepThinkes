@@ -399,7 +399,7 @@ export default function VerifyPage() {
 
                     {verificationResult.blockchainAnchoring?.chainTxHash && (
                       <div>
-                        <span className="small text-muted">Public Testnet Tx Hash (Polygon Amoy / Sepolia):</span>
+                        <span className="small text-muted">Public Testnet Tx Hash (Monad Testnet):</span>
                         <div className="font-monospace small bg-light p-2 rounded text-break border text-primary">
                           {verificationResult.blockchainAnchoring.chainTxHash}
                         </div>

@@ -64,7 +64,7 @@ class SmartContractService {
         success: true,
         txHash: receipt.hash,
         blockNumber: receipt.blockNumber,
-        explorerUrl: `https://amoy.polygonscan.com/tx/${receipt.hash}`,
+          explorerUrl: `https://testnet.monadexplorer.com/tx/${receipt.hash}`,
       };
     } catch (error) {
       console.error(`[Smart Contract] Issue tx error: ${error.message}`);

@@ -26,6 +26,12 @@ module.exports = {
       url: process.env.RPC_URL || "https://rpc-amoy.polygon.technology",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
     },
+
+    monad: {
+      url: process.env.RPC_URL || "https://testnet-rpc.monad.xyz/",
+      chainId: 10143,
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+    },
   },
   paths: {
     sources: "./contracts",

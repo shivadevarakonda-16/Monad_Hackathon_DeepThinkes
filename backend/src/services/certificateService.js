@@ -23,9 +23,6 @@ class CertificateService {
     return crypto.createHash('sha256').update(canonicalString).digest('hex');
   }
 
-  /**
-   * Generate QR Code as Data URI
-   */
   static async generateQRCode(verificationUrl) {
     return await QRCode.toDataURL(verificationUrl, {
       errorCorrectionLevel: 'H',
@@ -38,9 +35,6 @@ class CertificateService {
     });
   }
 
-  /**
-   * Generate a professional academic certificate PDF buffer
-   */
   static async generateCertificatePDF({
     certificateId,
     studentName,
