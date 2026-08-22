@@ -6,8 +6,7 @@
 
 1. ch. kumar chandu – Full Stack & Blockchain Developer
 2. D. Shiva Kumar – integration & backend
-3. K. Vamshi Krishna – Frontend & Commuicator
-4. K. Sai Kumar – Graphical Designer
+3. Sathish Mallopolla - PPT Maker & Communicator.
 
 
 ---
@@ -77,7 +76,7 @@ This provides a tamper-resistant and transparent verification mechanism.
 ### Blockchain
 
 - Solidity
--Monad Test Network.
+- Monad Test Network.
 
 ### Cloud & Infrastructure
 
